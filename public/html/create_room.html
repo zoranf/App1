@@ -1,0 +1,38 @@
+<div id="loginForm">
+	Create room
+	<form>
+		<div class="input"><input type="text" name="room_name" value="Room name" id="room_name" /></div>
+		<div class="input"><input type="text" name="room_password" value="Password" id="room_password" /></div>
+		<div>
+			<select name="room_type" id="room_type">
+				<option value="2p">Schnapsen 2</option>
+				<option value="3p">Schnapsen 3</option>
+				<option value="4p">Schnapsen 4</option>
+			</select>
+		</div>
+		<input type="button" name="create_room_submit" value="&nbsp;" id="create_room_submit" />
+	</form>
+</div>
+
+<script>
+	var url = $(location).attr('href');
+    var g_id = url.split("/")[4];
+    var r_user = $.cookie("username");
+	var socket = io.connect();
+
+
+    $('#create_room_submit').click(function() {
+        
+        r_name = $("#room_name").val();
+        r_pass = $("#room_password").val();
+        r_type = $("#room_type").val();
+
+        socket.emit('create_room', { 
+            r_name: r_name, 
+            r_pass: r_pass, 
+            r_creator: r_user, 
+            r_type: r_type,
+            g_id: g_id
+        });
+    });
+</script>

@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h2 Games
+		#games
+			for game in games
+				a(href='/lobby/#{game.name}')
+					img(src='#{game.image}')

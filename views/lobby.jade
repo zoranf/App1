@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	script(src='/javascripts/lobby.js')
+	.lobby
+		#filter
+			h2 Room list / Schnapssen
+		#tabs
+			.ID No.
+			.password
+				img(src='/images/lock-white.png', width='11', height='13')
+			.room-name room name
+			.game-mode game mode
+			.host host
+			.players players
+		#room-list
+			ul#list
+		input(type='button', value='Create room', class='create-room', id='create-room')

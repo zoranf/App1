@@ -1,0 +1,42 @@
+<script language="JavaScript">
+	$("#login_username").focusin(function() {
+		if($(this).val() == "Username")
+			$(this).val("").css("color", "#666");
+	});
+	
+	$("#login_username").focusout(function() {
+		if($(this).val() == "")
+			$(this).val("Username").css("color", "#CCC");
+	});
+	
+	$("#login_password").focusin(function() {
+		if($(this).val() == "Password") {
+			$(this).attr("type", "password");			
+			$(this).val("").css("color", "#666");
+		}
+	});
+	
+	$("#login_password").focusout(function() {
+		if($(this).val() == "") {
+			$(this).attr("type", "text");			
+			$(this).val("Password").css("color", "#CCC");
+		}
+	});
+
+	$("#login_password").change(function() {
+		console.log("hops");
+		$("#login_password_md5").val($.MD5( $("#login_password").val()));
+	});
+</script>
+
+<div id="loginForm">
+	Login
+	<form method="POST" action="/login">
+		<div class="input"><input type="text" name="login_username" value="Username" id="login_username" /></div>
+		<div class="input"><input type="text" name="login_password" value="Password" id="login_password" /></div>
+		<div><input type="checkbox" name="rememberMe" value="1" id="rememberId" /><label for="rememberId"> Remember me</label></div>
+		<div><a href="">I forgot my password</a></div>
+		<input type="submit" name="login_submit" value="&nbsp;" id="loginButton" />
+		<input type="hidden" name="login_password_md5" id="login_password_md5" value=""/>
+	</form>
+</div>

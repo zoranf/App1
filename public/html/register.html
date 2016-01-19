@@ -1,0 +1,60 @@
+<script type="text/javascript">
+
+	var temno = "#666";
+	var svetlo = "#CCC";
+	
+	$("#reg_username").focusin(function() {
+		if($(this).val() == "E-mail")
+			$(this).val("").css("color", temno);
+	});
+	
+	$("#reg_username").focusout(function() {
+		if($(this).val() == "")
+			$(this).val("E-mail").css("color", svetlo);
+	});
+	
+	$("#reg_password").focusin(function() {
+		if($(this).val() == "Password") {
+			$(this).attr("type", "password");			
+			$(this).val("").css("color", temno);
+		}
+	});
+	
+	$("#reg_password").focusout(function() {
+		if($(this).val() == "") {
+			$(this).attr("type", "text");			
+			$(this).val("Password").css("color", svetlo);
+		}
+	});
+
+	$("#reg_password").change(function() {
+		$("#reg_password_md5").val($.MD5( $("#reg_password").val()));
+	});
+	
+	$("#reg_nickname").focusin(function() {
+		if($(this).val() == "Nickname")
+			$(this).val("").css("color", temno);
+	});
+	
+	$("#reg_nickname").focusout(function() {
+		if($(this).val() == "")
+			$(this).val("Nickname").css("color", svetlo);
+	});
+	
+	$("#registerButton").click(function(){
+		if($("#username").val() == "E-mail" || $("#password").val() == "Password" || $("#nickname").val() == "Nickname") {
+			alert("Niste vnesli vseh polj!");
+			event.preventDefault();
+		}
+	});
+</script>
+<div id="loginForm">
+	<h3>Create a free account</h3>
+	<form method="POST" action="/register">
+		<div class="input"><input type="text" name="reg_username" value="E-mail" id="reg_username" /></div>
+		<div class="input"><input type="text" name="reg_password" value="Password" id="reg_password" /></div>
+		<div class="input"><input type="text" name="reg_nickname" value="Nickname" id="reg_nickname" /></div>
+		<input type="hidden" name="reg_password_md5" id="reg_password_md5" value=""/>
+		<input type="submit" name="reg_submit" value="&nbsp;" id="registerButton" />
+	</form>
+</div>

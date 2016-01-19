@@ -1,0 +1,70 @@
+!!!5
+html
+	head
+		title= title
+		link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+		link(rel='stylesheet', type='text/css', href='/stylesheets/lobby.css')
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+		script(src='/javascripts/jquery.md5.min.js')
+		script(src='/javascripts/jquery.cookie.js')
+		script(src='/javascripts/functions.js')
+		script(src='/socket.io/socket.io.js')
+		script(src='/javascripts/raphael.js')
+		script(src='/javascripts/scaler.js')
+		script(src='/javascripts/swap.js')
+	body
+		#nav-left
+			a(href="/")
+				img(src='/images/default.png', id='profile-pic-index')
+			.horizontal-separator
+			#games-btn
+				img(src='/images/games-idle.png', rel='/images/games-hover.png', class='rollover')
+				.title
+					.cloud GAMES
+					.cloud-arrow
+			.horizontal-separator
+			#rules-btn
+				img(src='/images/rules-idle.png', rel='/images/rules-hover.png', class='rollover')
+				.title
+					.cloud RULES
+					.cloud-arrow
+			.horizontal-separator
+			#about-btn
+				img(src='/images/about-idle.png', rel='/images/about-hover.png', class='rollover')
+				.title
+					.cloud ABOUT
+					.cloud-arrow
+			.horizontal-separator
+			#contact-btn
+				img(src='/images/contact-idle.png', rel='/images/contact-hover.png', class='rollover')
+				.title
+					.cloud CONTACT
+					.cloud-arrow
+			.horizontal-separator
+			#settings-btn
+				img(src='/images/settings-idle.png', rel='/images/settings-hover.png', class='rollover')
+				.title
+					.cloud PROFILE SETTINGS
+					.cloud-arrow
+			.horizontal-separator
+			#register-btn
+				img(src='/images/register-idle.png', rel='/images/register-hover.png', class='rollover')
+				.title
+					.cloud CREATE FREE ACCOUNT
+					.cloud-arrow
+			.horizontal-separator
+				#login-btn
+					img(src='/images/login-idle.png', rel='/images/login-hover.png', class='rollover')
+					.title
+						.cloud LOGIN
+						.cloud-arrow
+			.horizontal-separator
+				#logout-btn
+					a(href="/logout")
+						img(src='/images/logout-idle.png', rel='/images/logout-hover.png', class='rollover')
+						.title
+							.cloud LOGOUT
+							.cloud-arrow
+				.horizontal-separator
+		#wrapper
+			block content

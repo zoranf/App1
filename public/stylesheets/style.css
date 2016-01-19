@@ -1,0 +1,235 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+:focus {
+    outline-color: transparent;
+    outline-style: none;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+h2 { color: #414852; }
+
+a:hover { text-decoration: underline; }
+input { border: none; }
+
+html, body {
+	height: 100%;
+}
+
+#wrapper {
+    float: left;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+#nav-left {
+	background: #35383f;
+    float: left;
+	width: 59px;
+	height: 100%;
+	-webkit-box-shadow:  0px 0px 5px 1px rgba(1, 1, 1, .75);
+	box-shadow:  0px 0px 5px 1px rgba(1, 1, 1, .75);
+}
+
+#profile-pic-index {
+    margin: 10px 10px 5px 10px;
+    height: 47px;
+    width: 40px;
+}
+
+.horizontal-separator {
+	background: url(/images/horizontal-sep.png) no-repeat;
+	height: 2px;
+	width: 57px;
+}
+
+#nav-left #games-btn, #rules-btn, #about-btn, #contact-btn, #settings-btn, #register-btn, #login-btn, #logout-btn {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+    height: 24px;
+    width: 24px;
+}
+
+#games-btn:hover, #rules-btn:hover, #about-btn:hover, #contact-btn:hover, #settings-btn:hover, #register-btn:hover, #login-btn:hover, #logout-btn:hover { cursor: pointer; }
+
+#games-btn .title, #rules-btn .title, #about-btn .title, #contact-btn .title, #settings-btn .title, #register-btn .title, #login-btn .title, #logout-btn .title {
+    text-decoration: none;
+    display: none;
+}
+
+#games-btn:hover .title,
+#rules-btn:hover .title,
+#about-btn:hover .title,
+#contact-btn:hover .title,
+#settings-btn:hover .title,
+#register-btn:hover .title,
+#login-btn:hover .title,
+#logout-btn:hover .title {
+    position: absolute;
+    display: block;
+    z-index: 1000;
+}
+
+#games-btn:hover .title {
+    top: 50px;
+    left: 40px;
+}
+
+#rules-btn:hover .title {
+    left: 40px;
+    top: 97px;
+}
+
+#about-btn:hover .title {
+    left: 40px;
+    top: 143px;
+}
+
+#contact-btn:hover .title {
+    left: 40px;
+    top: 189px;
+}
+
+#settings-btn:hover .title {
+    left: 40px;
+    top: 236px;
+}
+
+#register-btn:hover .title {
+    left: 40px;
+    top: 286px;
+}
+
+#login-btn:hover .title {
+    left: 40px;
+    top: 333px;
+}
+
+#logout-btn:hover .title {
+    left: 40px;
+    top: 333px;
+}
+
+.title {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    height: 25px;
+}
+
+.title .cloud {
+    font-family: Verdana;
+	background: #FFF;
+	border-radius: 2px;
+	border: 1px solid #414852;
+    padding-left: 4px;
+    padding-right: 4px;
+	color: #414852;
+    height: 17px;
+}
+
+.title .cloud-arrow {
+    position: absolute;
+    background: url(/images/cloud-arrow.png) no-repeat;
+    width: 8px;
+    height: 7px;
+    bottom: 0px;
+    left: 10px;
+}
+
+/* Login form begin */
+#loginForm {
+    border-radius: 5px;
+    padding: 20px;
+    background: #040404;
+    margin: auto;
+    position: relative;
+    width: 256px;
+}
+ 
+#loginForm {
+    color: #FFF;
+}
+ 
+#loginForm div {
+    margin: 10px 0px 10px 0px;
+}
+.input {
+    width: 256px;
+    height: 43px;
+    background: url(/images/input.png) no-repeat;
+}
+ 
+.input input {
+    width:  230px;
+    color: #CCC;
+    margin: 12px 0px 0px 10px;
+    font-size: 16px;
+}
+ 
+#loginButton {
+    cursor: pointer;
+    width: 110px;
+    height: 36px;
+    background: url(/images/loginBtn00.png) no-repeat;
+}
+ 
+#loginButton:hover {
+    background: url(/images/loginBtn01.png) no-repeat;
+}
+ 
+#registerButton {
+    cursor: pointer;
+    width: 110px;
+    height: 36px;
+    background: url(/images/registerBtn00.png) no-repeat;
+}
+ 
+#registerButton:hover {
+    background: url(/images/registerBtn01.png) no-repeat;
+}
+
+#create_room_submit {
+    cursor: pointer;
+    width: 110px;
+    height: 36px;
+    background: url(/images/create-idle.png) no-repeat;
+}
+ 
+#create_room_submit:hover {
+    background: url(/images/create-hover.png) no-repeat;
+}
+ 
+/* POPUP */
+.zunaj {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+ 
+.znotraj {
+    position: absolute;
+    width: 296px;
+    margin-left: -148px;
+    left: 50%;
+    top: 50px;
+}
+ 
+/* KONEC POPUP */
+
+/* GAMES */
+#games img {
+    margin-right: 10px;
+    border: 5px solid #414852;
+    border-radius: 3px;
+}
