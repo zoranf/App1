@@ -1,14 +1,17 @@
 $(document).ready(function() {
-
-    if ($.cookie('username') == null )
-        $.cookie('username', "Guest"+Math.round(Math.random()*10000));
+    console.log("Lobby is ready ..");
+    if ($.cookie('username') == null) {
+        console.log("You need to login ..");
+        // $.cookie('username', "GuestLobby"+Math.round(Math.random()*10000));
+    }
     var url = $(location).attr('href');
     var g_id = url.split("/")[4];
-    var r_user = $.cookie("username");
+    var r_user = "You need to login"; // $.cookie("username");
     
     var socket = io.connect();
 
     var type = '';
+
     /*if(g_id == "Schnapssen")
         type = '<select id="play_type"><option value="2p">2p</option><option value="3p">3p</option><option value="4p">4p</option></select>'; 
     if(g_id == "Fourinarow")
@@ -53,6 +56,7 @@ $(document).ready(function() {
     });*/
 
     socket.on('goto_room', function(data) {
+        console.log("goto_room");
 
         window.location.href="/lobby/" + g_id + "/room/" + data.r_id + "/type/" + data.r_type;
     });

@@ -1,18 +1,32 @@
 {
-    "name": "test112",
-    "subdomain": "test112",
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "express": "3.1.0",
-        "socket.io": "*",
-        "nano": "1.2.x",
-        "mongojs": "*",
-        "jade": "*"
-    },
-    "version": "0.0.0-39",
-    "engines": {
-        "node": "0.8.x"
-    }
+  "name": "app1",
+  "version": "1.0.0",
+  "description": "Game platform",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoranf/App1.git"
+  },
+  "author": "Zoran Felbar, Sas�o Sabotin, Tomaz Turner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoranf/App1/issues"
+  },
+  "homepage": "https://github.com/zoranf/App1#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.8",
+    "mongoose": "^5.1.1",
+    "pug": "^2.0.3",
+    "socket.io": "2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
 }

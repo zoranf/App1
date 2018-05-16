@@ -18,16 +18,18 @@
 	var url = $(location).attr('href');
     var g_id = url.split("/")[4];
     var r_user = $.cookie("username");
-	var socket = io.connect();
+	var socket = io();
 
 
     $('#create_room_submit').click(function() {
+
+		console.log("create room submit");
         
         r_name = $("#room_name").val();
         r_pass = $("#room_password").val();
         r_type = $("#room_type").val();
 
-        socket.emit('create_room', { 
+        socket.emit('create_room', {
             r_name: r_name, 
             r_pass: r_pass, 
             r_creator: r_user, 

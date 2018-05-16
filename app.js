@@ -1,15 +1,14 @@
 var express = require('express'),
-    url = "mongodb://nodejitsu_zoranf:s622he159nr7g8isgjke2i1ght@ds051947.mongolab.com:51947/nodejitsu_zoranf_nodejitsudb8036041315",
+    url = "http://localhost:27017/admin",
     coll = ['users', 'games'],
-    db = require('mongojs').connect(url, coll)
+    db = require('mongojs')(url, coll),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
     app = express(),
     server = http.createServer(app),
     io = require('socket.io').listen(server);
 
 app.configure("production", function() {
-
     var oneYear = 31557600000;
     app.set("port", process.env.PORT || 3000);
     app.set("views", __dirname + "/views");
@@ -43,16 +42,16 @@ function user(username, password, nickname) {
 
 // GET
 // Index
+/*
 app.get('/*', function(req, res, next) {
 
-    
     if (isLoggedIn(req, res))
         res.locals.signin = true;
     else
         res.locals.signin = false;
 
     next();
-});
+});*/
 
 app.get('/', function(req, res) {
 
@@ -283,15 +282,19 @@ app.use(function(req, res, next) {
  
 // 500 Internal server error
 app.use(function(err, req, res, next) {
- 
+
+    console.log("Err= " + err.message);
+    /*
     res.status(500);
     res.render('500', {
         title: '500 Internal server error',
         message: '500 Internal server error'
     });
+    */
+   next();
 });
  
-server.listen(app.get('port'), function() { console.log("Express server listening on port " + app.get('port')); });
+server.listen(3000, function() { console.log("Express server listening on port 3000"); });
 
 ///////////////////////////
 // functions //

@@ -8,8 +8,8 @@ $(document).ready(function() {
     var g_id = url.split("/")[4];
     var r_id = url.split("/")[6];
     if ($.cookie('username') == null )
-        $.cookie('username', "Guest"+Math.round(Math.random()*10000));
-    var r_user = "Guest"+Math.round(Math.random()*10000);
+        $.cookie('username', "Guest4"+Math.round(Math.random()*10000));
+    var r_user = "Guest4"+Math.round(Math.random()*10000);
 
     var paper = new ScaleRaphael("canvas",1110,600);
     inner_w = window.innerWidth-100;

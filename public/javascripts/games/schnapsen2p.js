@@ -5,9 +5,10 @@ $(document).ready(function() {
     var url = $(location).attr('href');
     var g_id = url.split("/")[4];
     var r_id = url.split("/")[6];
+
     if ($.cookie('username') == null )
-        $.cookie('username', "Guest"+Math.round(Math.random()*10000));
-    var r_user = "Guest"+Math.round(Math.random()*10000);
+        $.cookie('username', "Guest2"+Math.round(Math.random()*10000));
+    var r_user = "Guest2"+Math.round(Math.random()*10000);
     var first_call = true;
     var first_switch = true;
     var last_card = false;
